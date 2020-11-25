@@ -4,17 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/Javascript" src="js/palindrome.js"></script>
+    <script type="text/Javascript" src="js/romanNumerals.js"></script>
     <title>Javascript Exercises</title>
 </head>
-<body>
-    <h1>Palindrome Checker</h1>
+    <body>
+        <div>
+            <h1>Palindrome Checker</h1>
 
 
-    word: <input type="text" name="word" id="word"/><br><br>
-    <input type="button" value="Submit" onclick="palindrome(document.getElementById('word').value)"/>
-    
-    <p id="demo"></p>
+            Word: <input type="text" name="word" id="word"/><br><br>
+            <input type="button" value="Submit" onclick="palindrome(document.getElementById('word').value)"/>
+            
+            <p id="palindromeValue"></p>
 
+        </div>
 
-</body>
+        <div>
+            <h1>Roman Numeral Converter</h1>
+        
+        
+            Number: <input type="number" min="1" max="9999" name="roman" id="roman"/><br><br>
+            <input type="button" value="Submit" onclick="convertToRoman(document.getElementById('roman').value)"/>
+            
+            <p id="romanNumeral"></p>
+        
+        </div>
+
+            
+    </body>
 </html>
