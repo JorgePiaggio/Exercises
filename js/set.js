@@ -38,7 +38,20 @@ class Set {
    size(){
      return this.length;
    }
-   // Only change code above this line
+   
+   //union of 2 sets
+    union(set2){
+    
+    	let set1 = new Set();
+    	this.values().forEach(func);
+    	set2.values().forEach(func);
+
+        function func(item){
+           set1.add(item);
+        }
+     return set1;
+    }
+    
  }
  
 
