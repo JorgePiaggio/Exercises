@@ -49,8 +49,28 @@ class Set {
         function func(item){
            set1.add(item);
         }
+        
      return set1;
+     
     }
+    
+    //intersection of 2 sets
+    intersection(set2){
+    
+        let set1 = new Set();
+        this.values().forEach(value => {
+           set2.values().forEach(val => {
+             if(value === val){
+                set1.add(value);
+             }
+           });      
+        });
+
+    return set1;
+    
+  }
+
+    
     
  }
  
