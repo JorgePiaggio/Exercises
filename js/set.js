@@ -78,7 +78,7 @@ class Set {
     difference(set){
 
       let newSet = new Set();
-      
+
       this.values().forEach(value => {
         if(!set.dictionary[value]){
           newSet.add(value);
@@ -88,6 +88,20 @@ class Set {
       return newSet;
     }
 
+
+    //subset check
+    isSubsetOf(set) {
+      let booleano = true;
+  
+      this.values().forEach(value => {
+        if(!set.dictionary[value]) {
+          booleano = false;
+          return;
+        }
+      });
+  
+      return booleano;
+    }
 }
  
 
