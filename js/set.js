@@ -4,42 +4,46 @@ class Set {
         this.length = 0;
      };
  
-   // This method will check for the presence of an element and return true or false
-   has(element) {
-     return this.dictionary[element] !== undefined;
-   }
+
+    // This method will check for the presence of an element and return true or false
+    has(element) {
+      return this.dictionary[element] !== undefined;
+    }
+  
+
+    // This method will return all the values in the set
+    values() {
+      return Object.keys(this.dictionary);
+    }
+  
+  
+    add(element) {
+      if(!this.has(element)){
+        this.dictionary[element] = 0;
+        this.length++;
+        return true;
+      }else{
+        return false;
+      }
+    }
  
-   // This method will return all the values in the set
-   values() {
-     return Object.keys(this.dictionary);
-   }
- 
- 
-   add(element) {
-     if(!this.has(element)){
-       this.dictionary[element] = 0;
-       this.length++;
-       return true;
-     }else{
-       return false;
-     }
-   }
- 
+
     remove(element) {
-     if(this.has(element)){
-       delete this.dictionary[element];      
-       this.length--;
-       return true;
-     }else{
-       return false;
-     }
-   }
+      if(this.has(element)){
+        delete this.dictionary[element];      
+        this.length--;
+        return true;
+      }else{
+        return false;
+      }
+    }
  
-   size(){
-     return this.length;
-   }
+    size(){
+      return this.length;
+    }
    
-   //union of 2 sets
+
+    //union of 2 sets
     union(set2){
     
     	let set1 = new Set();
@@ -51,28 +55,40 @@ class Set {
         }
         
      return set1;
-     
     }
+
     
     //intersection of 2 sets
     intersection(set2){
     
-        let set1 = new Set();
-        this.values().forEach(value => {
-           set2.values().forEach(val => {
-             if(value === val){
-                set1.add(value);
-             }
-           });      
-        });
+      let set1 = new Set();
+      this.values().forEach(value => {
+          set2.values().forEach(val => {
+            if(value === val){
+              set1.add(value);
+            }
+          });      
+      });
 
-    return set1;
-    
-  }
+      return set1;
+    }
 
-    
-    
- }
+
+    //difference between 2 sets (elements in A not in B)
+    difference(set){
+
+      let newSet = new Set();
+      
+      this.values().forEach(value => {
+        if(!set.dictionary[value]){
+          newSet.add(value);
+        }
+      });
+
+      return newSet;
+    }
+
+}
  
 
  /*
