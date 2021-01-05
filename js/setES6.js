@@ -31,4 +31,16 @@ function checkSet(arrToBeSet, checkValue){
  }
  
 
-console.log(checkSet([4, 5, 6], 3));
+//  ... can take iterable objects in ES6 and turn them into arrays.
+
+function checkSet2(set){
+    // Only change code below this line
+    var newSet = [...set];
+ 
+    return newSet;
+    // Only change code above this line
+ }
+
+
+ console.log(checkSet([4, 5, 6], 3));
+ console.log(checkSet2([1, 4, 5, 6, 7, 11, 32]));
