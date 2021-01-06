@@ -54,4 +54,47 @@ function LinkedList() {
         }
       }
 
+
+      this.isEmpty = ()=>{
+        return head===null;
+      }
+    
+
+      this.indexOf = (element) => {
+        
+        var index = -1;
+        if(head === null){
+          return index;
+        }
+    
+        var aux= head;
+        index=0;
+
+        while(aux.next !== null && aux.element !== element){
+          index++;
+          aux=aux.next;
+        }
+
+        if(aux.element !== element && aux.next===null){
+          return -1;
+        }else{
+          return index;
+        }
+      }
+    
+    
+      this.elementAt = (index) => {
+        var aux = head;
+        var i= 0;
+    
+        while(aux){
+          if(i === index){
+            return aux.element;
+          }
+          i++;
+          aux=aux.next;
+        }
+        
+        if(aux === null) return undefined;
+      }
   }
