@@ -55,46 +55,77 @@ function LinkedList() {
       }
 
 
-      this.isEmpty = ()=>{
-        return head===null;
-      }
-    
-
-      this.indexOf = (element) => {
-        
-        var index = -1;
-        if(head === null){
-          return index;
+    this.removeAt = function(index){
+      
+      if(index < 0 || index >= length){
+        return null;
+      }else{
+  
+        if(index === 0){
+          var currNode=head;
+          head=head.next;
+          length--;
+          return currNode.element;
         }
-    
-        var aux= head;
-        index=0;
-
-        while(aux.next !== null && aux.element !== element){
-          index++;
-          aux=aux.next;
-        }
-
-        if(aux.element !== element && aux.next===null){
-          return -1;
-        }else{
-          return index;
-        }
-      }
-    
-    
-      this.elementAt = (index) => {
-        var aux = head;
-        var i= 0;
-    
-        while(aux){
-          if(i === index){
-            return aux.element;
+  
+        var currentIndex=0;
+        var prevNode = head;
+        var currNode = null;
+  
+  
+        while(prevNode){
+          currNode = head.next;
+          currentIndex++;
+          if(currentIndex === index){
+            prevNode.next=currNode.next;
+            length--;
+            return currNode.element;
           }
-          i++;
-          aux=aux.next;
         }
-        
-        if(aux === null) return undefined;
       }
+    }
+
+
+    this.isEmpty = ()=>{
+      return head===null;
+    }
+  
+
+    this.indexOf = (element) => {
+      
+      var index = -1;
+      if(head === null){
+        return index;
+      }
+  
+      var aux= head;
+      index=0;
+
+      while(aux.next !== null && aux.element !== element){
+        index++;
+        aux=aux.next;
+      }
+
+      if(aux.element !== element && aux.next===null){
+        return -1;
+      }else{
+        return index;
+      }
+    }
+  
+  
+    this.elementAt = (index) => {
+      var aux = head;
+      var i= 0;
+  
+      while(aux){
+        if(i === index){
+          return aux.element;
+        }
+        i++;
+        aux=aux.next;
+      }
+      
+      if(aux === null) return undefined;
+    }
   }
