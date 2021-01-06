@@ -32,6 +32,38 @@ function LinkedList() {
       length++;
     }
     
+    this.addAt = (index,element) => {
+      if( index < 0 || index >= length ){
+        return false;
+      }
+  
+      var elem= new Node(element);
+  
+      if(index === 0){
+        elem.next = head;
+        head = elem;
+        return length++;
+      }else{
+        var currIndex = 0;
+        var prevNode = head;
+        var currNode = head.next;
+  
+        while(currIndex != index){
+          prevNode = currNode;
+          currNode = currNode.next;
+          currIndex++;
+
+          if(currIndex === index){
+            prevNode.next = elem;
+            elem.next = currNode;
+            return length++;
+          }
+
+        }
+      }
+      
+    }
+
 
     this.remove = function(element){
         //if element is the first
@@ -56,7 +88,7 @@ function LinkedList() {
 
 
     this.removeAt = function(index){
-      
+
       if(index < 0 || index >= length){
         return null;
       }else{
