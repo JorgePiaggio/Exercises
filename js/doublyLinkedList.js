@@ -63,4 +63,27 @@ var DoublyLinkedList = function() {
     }
   }
 
+  this.print = () => {
+    var aux = this.head;
+    var s=[];
+    while( aux ){
+      s.push(aux.data);
+      aux= aux.next;
+    }
+    console.log(s);
+  }
+
+
 };
+
+
+/*
+var li= new DoublyLinkedList();
+li.add(1);
+li.add(2);
+li.add(3);
+li.add(4);
+li.print();
+li.reverse();
+li.print();
+*/
