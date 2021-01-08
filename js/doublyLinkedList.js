@@ -63,6 +63,30 @@ var DoublyLinkedList = function() {
     }
   }
 
+ 
+  this.reverse = () => {
+
+    if (this.head === null) {
+      return null;
+    }
+
+    let previous = null;
+    let curr = this.head;
+    this.tail = curr;
+
+    while(curr){
+      previous = curr.prev;
+      curr.prev = curr.next;
+      curr.next = previous;
+      curr = curr.prev;
+    }
+
+    if(previous != null){
+      this.head = previous.prev;
+    }
+  }
+
+
   this.print = () => {
     var aux = this.head;
     var s=[];
@@ -72,8 +96,7 @@ var DoublyLinkedList = function() {
     }
     console.log(s);
   }
-
-
+  
 };
 
 
