@@ -44,6 +44,33 @@ function BinarySearchTree() {
     }
   }
 
+
+  this.findMin = () => {
+    if(this.root === null)
+    return null;
+
+    let min = this.root;
+
+    while(min.left){
+      min = min.left;
+    }
+    return min.value;
+  }
+
+
+   this.findMax = () => {
+    if(this.root === null)
+    return null;
+
+    let max = this.root;
+
+    while(max.right){
+      max = max.right;
+    }
+    return max.value;
+  }
+
+
 }
 
 
