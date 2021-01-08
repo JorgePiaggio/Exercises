@@ -93,8 +93,40 @@ function BinarySearchTree() {
             }
         }
         return false;
-        
     }
+
+    //check if tree is binaryTree
+    function isBinarySearchTree(tree) {
+
+        if(tree.root === null)
+            return false;
+        
+        let isBinary = true;
+        
+        function checkNodes(node){
+            if(node.left != null){
+                const left = node.left;
+                if(left.value > node.value){
+                    isBinary = false;
+                }else{
+                    checkNodes(left);
+                }
+            }
+    
+            if(node.right != null){
+                const right = node.right;
+                if(right.value < node.value){
+                    isBinary = false;
+                }else{
+                    checkNodes(right);
+                }
+            }
+        }  
+        
+        checkNodes(tree.root);
+        return isBinary;
+    }  
+
 
 }
 
