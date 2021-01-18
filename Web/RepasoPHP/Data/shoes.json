@@ -1,0 +1,23 @@
+[
+    {
+        "id": "123",
+        "name": "21312r",
+        "brand": "nike",
+        "category": "formal",
+        "price": "555"
+    },
+    {
+        "id": "111",
+        "name": "fewef",
+        "brand": "reebok",
+        "category": "deportivo",
+        "price": "1234"
+    },
+    {
+        "id": "123456",
+        "name": "Alpargata",
+        "brand": "nike",
+        "category": "deportivo",
+        "price": "655"
+    }
+]

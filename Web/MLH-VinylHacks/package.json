@@ -1,0 +1,28 @@
+{
+  "name": "vinylhacks",
+  "version": "1.0.0",
+  "description": "Hackaton brand",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JorgePiaggio/MLH-VinylHacks.git"
+  },
+  "author": "JorgeP",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JorgePiaggio/MLH-VinylHacks/issues"
+  },
+  "homepage": "https://github.com/JorgePiaggio/MLH-VinylHacks#readme",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.3",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1"
+  }
+}
