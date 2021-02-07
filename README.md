@@ -1,3 +1,3 @@
 # Exercises
 <br>
-Exercises in different languages made for courses, hackatons, fun
+Exercises in different languages made for studies, courses, hackatons, fun
