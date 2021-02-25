@@ -24,7 +24,14 @@
     display: flex;
     flex-direction: row;
   }
-  
+
+  .card{
+    border: 4px solid black;
+    border-radius: 5%;
+    padding: 2rem 2rem;
+    background-color:rgba(0, 45, 245, 0.222)
+  }
+
   .key{
     border: 4px solid black;
     border-radius: 5%;
@@ -55,4 +62,10 @@ kbd{
     text-transform: uppercase;
     letter-spacing: .1rem;
     color: #ffc600;
+}
+
+@media only screen and (max-width: 600px){
+    .row{
+        flex-direction: column;
+      }
 }
