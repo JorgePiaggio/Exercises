@@ -1,12 +1,12 @@
 html {
-    font-family: 'helvetica neue';
+    font-family: 'Ubuntu';
     text-align: center;
     font-size: 10px;
 }
 
 body { 
     background: rgb(252,70,107);
-    background: radial-gradient(circle, rgba(252,70,107,1) 0%, rgba(0,0,0,1) 100%);
+    background: radial-gradient(circle, rgba(252,70,107,1) 0%, rgb(252, 34, 77) 25%, rgba(0,0,0,1) 80%);
     margin: 0;
     font-size: 2rem;
     display: flex;
@@ -18,13 +18,14 @@ body {
 .clock{
     left: 36%;
     width: 30rem;
-    height: 30rem;
-    border: 20px solid white;
+    height: 30rem; 
+    background: rgba(0,0,0,0.2);
+    border: 13px solid black ;
     border-radius: 50%;
     position: relative;
     padding: 2rem;
     box-shadow: 0 0 0 4px rgba(0,0,0,0.1),
-                inset 0 0 0 3px #EFEFEF,
+                inset 0 0 0 3px #767676,
                 inset 0 0 10px black,
                 0 0 10px rgba(0,0,0,0.2);
 }
@@ -44,33 +45,63 @@ body {
     top: 50%;
     transform-origin: 100%; /* set rotation point */
     transform: rotate(90deg);
-    transition: all 0.05s;
-    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+    transition: all 0.05s;  
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1); 
+    box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.694);
 }
 
 .hour_hand{
+    width: 40%;
     height: 8px;
+    left: 10%;    
     background: black;
-    border-radius: 5%;
-    border: solid 2px red;
+    border: solid 2px rgb(162, 0, 0);
+    border-bottom-left-radius: 55%;
+    border-top-left-radius: 55%;
 }
 
 .min_hand{
     height: 6px;
     background: black;
-    border: solid 2px red;
-    border-radius: 5%;
+    border: solid 2px rgb(162, 0, 0);    
+    border-bottom-left-radius: 45%;
+    border-top-left-radius: 45%;
 }
 
 .sec_hand{
-    height: 6px;
+    height: 4px;
     background: rgb(82, 0, 0);
-    border-radius: 5%;
-
+    border-radius: 25%;
 }
 
 .center{
-    transform-origin: 50%;
+    left: 40.5%;
+    margin-top: 1.5%;
+    width: 10%;
+    height: 10%;
+    background: black;
+    position: absolute;
+    top: 50%;
+    box-shadow: none;
+    border-radius: 50%;
+}
+.end{
+    margin-top: 6vh;
+}
 
+.day, .digital{
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+    text-shadow: 4px 4px 4px rgb(31, 31, 31);
+}
 
+@media only screen and (max-width: 800px){
+    
+body { 
+    align-items: flex-start;
+}
+.clock{
+        left: 0%;
+    }
 }
