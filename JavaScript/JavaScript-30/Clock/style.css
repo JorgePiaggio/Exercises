@@ -6,7 +6,7 @@ html {
 
 body { 
     background: rgb(252,70,107);
-    background: radial-gradient(circle, rgba(252,70,107,1) 0%, rgb(252, 34, 77) 25%, rgba(0,0,0,1) 80%);
+    background: radial-gradient(circle, rgb(254, 15, 63) 0%, rgb(252, 34, 77) 25%, rgba(0,0,0,1) 80%);
     margin: 0;
     font-size: 2rem;
     display: flex;
@@ -25,8 +25,8 @@ body {
     position: relative;
     padding: 2rem;
     box-shadow: 0 0 0 4px rgba(0,0,0,0.1),
-                inset 0 0 0 3px #767676,
-                inset 0 0 10px black,
+                inset 0 0 0 5px #5c5c5c,
+                inset 0 0 0 10px black,
                 0 0 10px rgba(0,0,0,0.2);
 }
 
@@ -51,19 +51,21 @@ body {
 }
 
 .hour_hand{
-    width: 40%;
+    width: 30%;
     height: 8px;
-    left: 10%;    
+    left: 19.5%;    
     background: black;
-    border: solid 2px rgb(162, 0, 0);
+    border: solid 2px #828181;
     border-bottom-left-radius: 55%;
     border-top-left-radius: 55%;
 }
 
 .min_hand{
+    width: 45%;
     height: 6px;
+    left: 5%;    
     background: black;
-    border: solid 2px rgb(162, 0, 0);    
+    border: solid 2px #828181;    
     border-bottom-left-radius: 45%;
     border-top-left-radius: 45%;
 }
@@ -75,7 +77,7 @@ body {
 }
 
 .center{
-    left: 40.5%;
+    left: 41%;
     margin-top: 1.5%;
     width: 10%;
     height: 10%;
@@ -85,6 +87,7 @@ body {
     box-shadow: none;
     border-radius: 50%;
 }
+
 .end{
     margin-top: 6vh;
 }
@@ -96,12 +99,29 @@ body {
     text-shadow: 4px 4px 4px rgb(31, 31, 31);
 }
 
+.tz{    
+    position: absolute;
+    margin-top: -30%;
+    left: -5%;
+    background-color: #000000;
+    color: #858585;
+    font-size: 2rem;
+}
+
 @media only screen and (max-width: 800px){
     
-body { 
-    align-items: flex-start;
-}
-.clock{
-        left: 0%;
+    body { 
+        align-items: flex-start;
+        padding-left: 2vw;
+        padding-top: 2vh;
+        background: linear-gradient(135deg, rgb(254, 15, 63) 0%, rgb(252, 34, 77) 25%, rgba(0,0,0,1) 95%);
+
     }
+    .clock{
+            left: 0%;
+    }
+
+    .tz{    
+        margin-top: 150%;
+    
 }
