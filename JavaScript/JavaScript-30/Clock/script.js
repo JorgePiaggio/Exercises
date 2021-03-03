@@ -216,23 +216,25 @@ function setDate(){
         now.addHours( (now.getTimezoneOffset() / 60) ); // diff between local time and GMT 00 
         now.addHours(offset); // diff between selected timezone and GMT 00 
     }
-    
     setDay(now); // day name
     
     // analog
-    const seconds = now.getSeconds();
-    const secondsDegrees = ((seconds / 60) * 360) + 90;
+    let seconds = now.getSeconds();
+    let secondsDegrees = ((seconds / 60) * 360) + 90;
     secHand.style.transform = `rotate(${secondsDegrees}deg)`;
 
-    const minutes = now.getMinutes();
-    const minutesDegrees = ((minutes / 60) * 360) + 90;
+    let minutes = now.getMinutes();
+    let minutesDegrees = ((minutes / 60) * 360) + 90;
     minHand.style.transform = `rotate(${minutesDegrees}deg)`;
 
-    const hour = now.getHours();
-    const hourDegrees = ((hour / 12) * 360) + ((minutes/60)*30) + 90;  // hour plus minutes % 
+    let hour = now.getHours();
+    let hourDegrees = ((hour / 12) * 360) + ((minutes/60)*30) + 90;  // hour plus minutes % 
     hourHand.style.transform = `rotate(${hourDegrees}deg)`;    
 
     //digital
+    if(hour < 10){ hour = '0' + hour; }
+    if(minutes < 10){ minutes = '0' + minutes; }
+    if(seconds < 10){ seconds = '0' + seconds; }
     document.getElementById("digitalString").innerHTML = hour + ":" + minutes + ":" + seconds;  
 
 }
