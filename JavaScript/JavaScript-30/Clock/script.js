@@ -182,7 +182,7 @@ const timeZones = [
     'Africa/Johannesburg'
   ];
 
-
+timeZones.sort();
 
 var select = document.getElementById('tz');
 
@@ -210,12 +210,14 @@ Date.prototype.addHours = function(h) {
 
 function setDate(){
     const now = new Date(); 
+
     if(document.getElementById("tz").value != -1){
         var offset = getTimezone(document.getElementById("tz").value);
-        now.addHours(offset); // 
+        now.addHours( (now.getTimezoneOffset() / 60) ); // diff between local time and GMT 00 
+        now.addHours(offset); // diff between selected timezone and GMT 00 
     }
+    
     setDay(now); // day name
-    //console.log(getTimezone(document.getElementById("tz").value)); // 
     
     // analog
     const seconds = now.getSeconds();
@@ -227,7 +229,7 @@ function setDate(){
     minHand.style.transform = `rotate(${minutesDegrees}deg)`;
 
     const hour = now.getHours();
-    const hourDegrees = ((hour / 12) * 360) + ((minutes/60)*30) + 90;  //
+    const hourDegrees = ((hour / 12) * 360) + ((minutes/60)*30) + 90;  // hour plus minutes % 
     hourHand.style.transform = `rotate(${hourDegrees}deg)`;    
 
     //digital
