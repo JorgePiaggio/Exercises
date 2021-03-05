@@ -208,7 +208,7 @@ Date.prototype.addHours = function(h) {
 
 
 
-function setDate(){
+function setTime(){
     const now = new Date(); 
 
     if(document.getElementById("tz").value != -1){
@@ -216,7 +216,7 @@ function setDate(){
         now.addHours( (now.getTimezoneOffset() / 60) ); // diff between local time and GMT 00 
         now.addHours(offset); // diff between selected timezone and GMT 00 
     }
-    setDay(now); // day name
+    setDate(now); // day name
     
     // analog
     let seconds = now.getSeconds();
@@ -235,7 +235,8 @@ function setDate(){
     if(hour < 10){ hour = '0' + hour; }
     if(minutes < 10){ minutes = '0' + minutes; }
     if(seconds < 10){ seconds = '0' + seconds; }
-    document.getElementById("digitalString").innerHTML = hour + ":" + minutes + ":" + seconds;  
+    document.getElementById("digitalString").innerHTML = hour + ":" + minutes + ":" + seconds;
+    //document.getElementById("digitalString").innerHTML = now;  
 
 }
 
@@ -256,14 +257,15 @@ function getTimezone(value){
 }
 
 
-function setDay(now){
+function setDate(now){
     var options = { weekday: 'long'};
-    const day = new Intl.DateTimeFormat('en-US', options).format(now);
-    document.getElementById("dayString").innerHTML = day;  
+    var day = " " + now.getDay() + "/" + (now.getMonth() + 1) + "/" + now.getFullYear();
+    var currentDate = new Intl.DateTimeFormat('en-US', options).format(now);
+    document.getElementById("dayString").innerHTML = currentDate + day;  
     //console.log(day);
 }
 
 
-setDate();
-setInterval(setDate, 1000)
+setTime();
+setInterval(setTime, 1000)
 
