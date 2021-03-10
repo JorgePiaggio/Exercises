@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Heat</title>
+</head>
+<body>
+    
+    <div id="canvas" class="canvas">
+        <img id="universe" class="universe" src="images/universe.jpg">
+        <img id="broccoli" class="broccoli" onload="travel()" onclick="travel()" src="images/broccoli.png">
+        <img id="back" class="back" src="images/back.png">
+        <img id="cat" class="cat" src="images/cat.png">
+        <button onclick="dro()">Click</button>
+    </div>
+
+    
+    <script src="dynamics.js"></script>
+    <script src="index.js"></script>
+
+</body>
+</html>
