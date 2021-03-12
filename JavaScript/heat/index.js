@@ -4,6 +4,7 @@ document.getElementById("randomIp").onclick = function () {
     var c = Math.floor(Math.random() * 2);
     var d = Math.floor(Math.random() * 2);
     location.href = `https://${a}.${b}.${c}.${d}`;*/
+
     location.href = `https://random-ize.com/random-youtube/goo-f.php`;
 };
 
