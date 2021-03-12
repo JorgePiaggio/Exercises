@@ -1,5 +1,6 @@
   :root {
-    --black: black;
+    --black: rgb(0, 0, 0);
+    --green: rgb(20, 255, 1);   
   }
 
   body {
@@ -17,12 +18,37 @@
   }
 
   button{
-    position: sticky;
+    position: absolute;
+    top: 5%; left: 85%;
+    color:rgba(4, 97, 237, 0.591);
+    background-color: var(--black);
+    text-shadow:  2px 2px rgba(2, 92, 205, 0.591),
+                  4px 4px rgba(0, 72, 175, 0.591),
+                  6px 6px rgba(0, 56, 140, 0.591),
+                  8px 8px rgba(0, 42, 100, 0.591),
+                  -2px 2px rgba(2, 92, 205, 0.591),
+                  -4px 4px rgba(0, 72, 175, 0.591),
+                  -6px 6px rgba(0, 56, 140, 0.591),
+                  -8px 8px rgba(0, 42, 100, 0.591);
+    box-shadow: 2px 2px 3px rgba(0, 72, 181, 0.222);
+    border: none;
+    border-radius: 3%;
+    padding: .5rem;
+    padding-bottom: 1rem;
   }
-  
+
+  button:hover{
+    color:rgba(56, 63, 74, 0.872);
+    background-color: var(--black);
+    text-shadow: 1px 2px rgba(0, 77, 15, 0.797),
+    2px 4px rgba(0, 72, 175, 0.591),
+    3px 6px rgba(2, 92, 205, 0.591),
+    4px 8px rgba(4, 97, 237, 0.591);
+  }
+
   img {
     position: absolute; 
-    width:100%;
+    width: 100%;
     height: 100%;
   }
 
@@ -47,25 +73,28 @@
     right: 0;
     top: 50%;
     left: 70%;
-    filter: saturate(3);
-    -webkit-filter: saturate(3);
+    filter: saturate(4);
+    -webkit-filter: saturate(4);
   }
 
   .cat:hover{    
     left: -5%;
     opacity:0.5;
-    -webkit-filter: invert(1);
-    filter: invert(1);
+    -webkit-filter: sepia(70%) !important;
+    filter: sepia(70%) !important;
     -webkit-transform: scaleX(-1) !important;
     transform: scaleX(-1) !important;
     border-top-left-radius: 50%;
-    background-color: rgba(1, 149, 152, 0.934);
-    box-shadow: 150px -120px 11px rgba(196, 235, 0, 0.276),
-                -100px 20px 11px rgba(0, 255, 229, 0.324), 
-                -140px 100px 11px rgba(2, 70, 64, 0.324),
-                -70px -30px 11px rgba(0, 8, 255, 0.324),
-                50px -80px 11px rgb(232, 232, 240),
-                40px -60px 2px rgba(216, 0, 235, 0.365);
+    background-color: rgba(1, 147, 152, 0);
+    box-shadow: 30px -20px 11px rgba(0, 8, 255, 0.324),
+                60px -40px 11px rgba(255, 247, 0, 0.324), 
+                90px -60px 11px rgba(2, 70, 64, 0.324),
+                120px -80px 11px rgba(230, 3, 185, 0.324),
+                -20px -20px 11px rgba(0, 8, 255, 0.324),
+                -30px 20px 11px rgba(0, 8, 255, 0.324),
+                -60px 40px 11px rgba(255, 247, 0, 0.324), 
+                -90px 60px 11px rgba(2, 70, 64, 0.324),
+                -120px 80px 11px rgba(230, 3, 185, 0.324);
   }
 
   .broccoli{
@@ -73,101 +102,72 @@
     height: 10%;
     top: 30%;
     left: 50%;
+    filter: drop-shadow(0 0 30px var(--green));
   }
 
   .hiddenText{
+    font-size: 1rem;
     position: absolute;
     top: 75%;
     left: 80%;
     color: rgb(26, 26, 26);
+    text-align: center;
+    overflow: hidden;
   }
-/*
-  span{
-    margin: 2vw;
-    padding: 2vw;
-    scale:0.1;
-    border-radius: 80%;
-    opacity: 0.5;
-    width: 1vw;
-    height: 1vw;
-    top: 20%;
-    left: 40%;
+
+  .slide{
+    left: -110%;
+    top: 60%;
+    width: 100%;
+    height: auto;
+    color: rgba(136, 0, 255, 0.653);
+    text-shadow: 2px 1px 3px rgba(43, 0, 255, 0.454);
+    letter-spacing: 1rem;
+    font-weight: bold;
     position: absolute;
-    animation-name: weirdo;
-    animation-duration: 1.5s; 
-    animation-timing-function: ease-out; 
-    animation-delay: 0s;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
-    animation-fill-mode: none;
-    animation-play-state: running; 
-  } 
-  
-  @keyframes weirdo {
-    0% {
-      transform: scale(.9);
-      transform: translateY(-325%);
-      background-color: rgba(255, 255, 255, 0.112);
-    }
-    50% {
-      background-color: rgba(0, 51, 255, 0.194);
-      transform: translateY(325%);
-    }
-    100% {
-      transform: scale(1.5); 
-      transform: translateX(125%);
-      background-color: rgba(149, 0, 255, 0.174)
-    }
-  }
-*/
-
-  @keyframes move {
-    100% {
-        transform: translate3d(0, 0, 1px) rotate(360deg);
-    }
+    -webkit-animation: slide 20s infinite;
+    -webkit-animation-delay: 10s;
+    animation: slide 20s infinite;
+    animation-delay: 20s;
   }
 
+  @-webkit-keyframes slide {
+    70% { left: 34%; }  
+    100% { left: 120%; top: 30%; }
+  }
 
-  span{
-    color: #a99603;
-    margin: 2vw;
-    padding: 2vw;
-    scale:0.1;
-    border-radius: 80%;
-    opacity: 0.5;
+  @keyframes slide {
+    70% { left: 34%; }
+    100% { left: 120%; top: 30%; }
+  }
+
+  .slide2{
+    left: 1%;
+    top: -70%;
     width: 1vw;
-    height: 1vw;
-    top: 20%;
-    left: 40%;
-    overflow: hidden; 
+    height: auto;    
+    opacity: 0;
+    color: rgba(0, 255, 187, 0.311);
+    text-shadow: 2px 1px 3px rgba(165, 0, 0, 0.804);
+    font-weight: bold;
+    font-size: 2rem;
     position: absolute;
-    animation: move;
-    animation-duration: 45;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-}
+    -webkit-animation: slide2 10s linear infinite;
+    animation: slide2 10s linear infinite;
+  }
 
-  span:nth-child(0) {
-      background-color: #7d03a9;
-      top: 76%;
-      left: 91%;
-      animation-duration: 49s;
-      animation-delay: -2s;
-      transform-origin: -21vw -10vh;
+  @-webkit-keyframes slide2 { 
+    0% { top: -390%; opacity: .1; }
+    35% { opacity: 1; }
+    75% { top: 0%; opacity: .1; }
+    90% { opacity: 0; }
+    100% { top: -150%; }
   }
-  span:nth-child(1) {
-    background-color: #07f284;
-      top: 22%;
-      left: 67%;
-      animation-duration: 12s;
-      animation-delay: -20s;
-      transform-origin: 15vw -23vh;
-  }
-  span:nth-child(2) {
-    background-color: #001d5b;
-      top: 90%;
-      left: 100%;
-      animation-duration: 6s;
-      animation-delay: -5s;
-      transform-origin: 19vw 12vh;
+
+  @keyframes slide2 {    
+    0% { top: -390%; opacity: .1; }
+    35% { opacity: 1; }
+    75% { top: 0%; opacity: .1; }
+    90% { opacity: 0; }
+    100% { top: -150%; }
   }
